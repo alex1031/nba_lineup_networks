@@ -1,5 +1,5 @@
 # Analysing NBA Player Performance using Network Theory
-This project aims to apply network theory concepts to analyse player performance based on the quality of lineups they were involved in, and hence determine the best players in each team, the league, and compare to popular advanced statistics used today. The use of networks allows for a more interpretable result on the impact a player has on the team relative to their teammates. This provides a different perspective on player performance, as current advanced statistics represent each player as their own problem space. This is a recreation of the paper by 
+This project aims to apply network theory concepts to analyse player performance based on the quality of lineups they were involved in, and hence determine the best players in each team, the league, and compare to popular advanced statistics used today. The use of networks allows for a more interpretable result on the impact a player has on the team relative to their teammates. This provides a different perspective on player performance, as current advanced statistics represent each player as their own problem space.
 
 Lineup data used in this project were from the 2022-23 NBA season.
 
