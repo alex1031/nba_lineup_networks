@@ -30,3 +30,28 @@ All network building was implemented through the Python module NetworkX.
 
 PageRank and Eigenvector Centrality were chosen as the node centrality algorithms to evaluate the importance of each player within the networks. PageRank measures the most important nodes in a network using in-links and out-links, while Eigenvector Centrality is a measure of both how well-connected a node is, as well as the quality of the connection. Full mathematical definitions can be found here [link]. These were also implemented through NetworkX.
 
+## Results
+
+Results can be found in the results excel file above. These results can also be recreated through using the Network Theory notebook.
+
+### Best Players by Teams 
+
+The results from the network will be compared against advanced statistics used in the league today, specifically PER (Player Efficiency Rating), WS/48 (Win Share per 48) and VORP (Value Over Replacement player). 
+
+For each team, the model output is counted as successful if the player appeared in any of the advanced statistics. The PageRank scoring system was correct 53.3% of the time, while the eigen centrality scoring was slightly better at 56.6%.
+
+## Discussion
+Looking at the results, there were some significant omissions such as Lebron James, Kevin Durant, Stephen Curry, and other notable star players. This is due to the network favouring players that were involved in more lineups and playing more games, as they lead to more links. This can be affected by factors such as injuries and mid-season trades, where for example, Durant was traded mid-season and was injured for almost half the season, so he was barely included in any of the Suns or Nets lineups when comparing with Nic Claxton.
+
+This model also favoured centers and interior players due to the metrics selected, since they tend to statistically perform better field goal percentage and rebounding percentages due to their role on the team. Furthermore, a player’s defensive impact was limited to opponent miss percentage and steals in this model. These issues can be addressed through selecting more metrics in general, or more advanced and specific ones. However, results could be affected by issues such as multicollinearity if they aren’t selected carefully. Computational time should also be considered.
+
+In addition, comparing node centrality metrics overall is a slight misrepresentation of the problem space, as each metric is specific to each team. The best player on a well-rounded team would have a lower centrality score compared to the best player on a team that is less balanced, as the player in the first case would be surrounded by nodes with higher importance score, dampening their overall score. 
+
+This model is, however, able to effectively rate players based on their availability to the team. This was demonstrated in the results, where players such as Kevon Looney and Ivica Zubac, who played 82 and 76 games respectively, were selected as the most important players on their team over the star players.
+
+## Conclusion 
+
+This project was able to apply network theory concepts to analyse player performance but performed mediocre when comparing with existing advanced statistics. Games played and efficiency was discovered as the main contributing factor for the model outputs. 
+
+Further research could involve advancements in the edge weighing function, specifically the adjustment multipliers, and incorporate more advanced offensive and defensive metrics such as effective field goal percentage, usage rate and box plus minus to provide more accurate results. In addition, play-by-play data could be experimented with, in order to provide a more specific evaluation for how each player performed in lineup. 
+
